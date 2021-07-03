@@ -38,12 +38,14 @@ body{
     color: whitesmoke;
     
 }
+
 #startGame2 h3{
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
     color: whitesmoke;
     margin-top: -8vh ;
 }
+
 #startGame2 h4{
     font-family: 'Indie Flower', cursive;
     font-size: 1.4rem;
@@ -51,6 +53,7 @@ body{
   
      
 }
+
 #startGame2 button{
     margin-top: 7vh;
     height: 9rem;
@@ -59,14 +62,17 @@ body{
     background: transparent;
     border: none !important;
 }
+
 #startButton{
     font-size: 2rem;
     color: gold;
 }
+
 #imgPaper{
     width: 60vw;
     height: 100vh;
 }
+
 #paperBack{
 
     background-image: url("images/fundo.png");
@@ -79,34 +85,35 @@ body{
 
 
 }
+
 #paperBack h1{
     
     font-family: 'Indie Flower', cursive;
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
+    width: 500px;
+    margin-left: 7rem;
   
 }
-
-
 
 #paperBack ul{
     display: flex;
     justify-content: space-around;
-    margin-top: 8rem;
+    margin-top: 6rem;
     list-style: none;
    
    
    
 }
 
-
 #paperBack ul li img{
     width: 3rem;
     height: 3.2rem;
     
 }
+
 #buttons{
-   margin-top: 7rem;
+   margin-top: 5rem;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -122,14 +129,8 @@ body{
     margin-left: 4rem;
     margin-right: 0rem;
 }
-/* #help img{
-    margin-right: 0rem;
-    margin-left: 8rem;
-    width: 2.5rem;
-    height: 2.5rem;
-} */
 
-#ultimaTela{
+#lastScreen{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -146,6 +147,7 @@ font-size: 4rem;
     font-size: 1.2rem;
     background-color:green;
 }
+
 #p2{
     font-size: 1.2rem;
     background-color:red;

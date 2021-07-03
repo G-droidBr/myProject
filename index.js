@@ -4,8 +4,6 @@ paper.style.display = 'none';
 let winnerHtml = document.getElementById("winner");
 winnerHtml.style.display = 'none';
 
-
-
 let questions = [
     {
         question: 'O Estádio do Morumbi pertence a qual time abaixo?',
@@ -65,7 +63,7 @@ let questions = [
         option2: './images/FluminenseFCBA.png',
     },
     {
-        question: 'Qual desses times abaixo participa Campeonato Mineiro ?',
+        question: 'Qual desses times abaixo participa do Campeonato Mineiro ?',
         answer: './images/Atletico_mineiro_galo.png',
         option: './images/corinthians.png',
         option2: './images/gremio.png',
@@ -121,17 +119,36 @@ let questions = [
 
 ];
 
+let fund = document.querySelector('#sound');
+let playPauseBNT = document.querySelector('#playPauseBNT');
+let audio = document.querySelector('#audio');
+let audioLose = document.querySelector('#audioLose');
+let audioWin = document.querySelector('#audioWin');
+let count = 0;
 
 document.getElementById('startButton').addEventListener('click', function () {
 
     clear();
     startQuestion();
     pushQuestions();
-
+    audio.play()
 
 });
 
 document.getElementById('')
+
+function playPause(){
+    if(count === 0){
+        count = 1;
+        audio.play();
+        fund.innerHTML = `<img id="playPauseBNT" onclick="playPause()" src="images/mute.png" alt="">`
+        
+    }else{
+        count = 0;
+        audio.pause()
+        fund.innerHTML = `<img id="playPauseBNT" onclick="playPause()" src="images/soundd.png" alt="">`
+    }
+}
 
 
 function clear() {
@@ -141,13 +158,12 @@ function clear() {
 };
 
 
-
 function startQuestion() {
     
     paper.style.display = 'block';
-    
-    
+       
 };
+
 
 let questionNumber = 0;
 let pergunta = questions[questionNumber].question;
@@ -155,16 +171,20 @@ let option = questions[questionNumber].option;
 let option2 = questions[questionNumber].option2;
 let resposta = questions[questionNumber].answer;
 let help = questions[questionNumber].help;
+let respostasAleatorias = [];
+let correctAnswers = 0;
+let wrongQuestions = 0;
+let porcentagem = 0;
+
+
 function getRandomAnswer() {
 
     let options = [option, option2, resposta]
     let opcao = Math.floor(Math.random() * 3)
-
     return options[opcao]
 
 }
 
-let respostasAleatorias = [];
 
 function checkUniqueAnswer() {
     let answer = getRandomAnswer()
@@ -172,6 +192,7 @@ function checkUniqueAnswer() {
         respostasAleatorias.push(answer)
     }
 }
+
 
 function threeRandomAnswer() {
 
@@ -181,12 +202,6 @@ function threeRandomAnswer() {
     }
 
 }
-
-
-
-let correctAnswers = 0;
-let wrongQuestions = 0;
-
 
 
 function pushQuestions() {
@@ -211,9 +226,6 @@ function pushQuestions() {
        
     }
 
-    
-
-
     document.querySelector("#resposta").addEventListener('click', function () {
         correctAnswers += 1;
         console.log(correctAnswers)
@@ -230,12 +242,7 @@ function pushQuestions() {
         nextQuestion();
         
     })
-   
-    
-    
-
 };
-
 
 
 function nextQuestion() {
@@ -255,9 +262,7 @@ function nextQuestion() {
     help = questions[questionNumber].help;
     pushQuestions()
  
-
 }
-
 
 
 function winner() {
@@ -268,30 +273,25 @@ function winner() {
     
 }
 
-let porcentagem = 0;
 
 function checkWinner() {
     porcentagem = correctAnswers * 10
 
     if (correctAnswers > 6) {
+        audio.pause();
+        audioWin.play
+        ();
         document.querySelector('#winner h1').innerHTML = `Parabéns Você Ganhou!`
         document.querySelector('#winner h3').innerHTML = `${porcentagem}%`
         document.querySelector('#p1').innerHTML = `Você Acertou ${correctAnswers} Perguntas!`
         document.querySelector('#p2').innerHTML = `Você Errou ${wrongQuestions} Perguntas!`
     }
     else if (correctAnswers < 6) {
+        audio.pause();
+        audioLose.play();
         document.querySelector('#winner h1').innerHTML = `Infelizmente Não Foi Desta Vez!`
         document.querySelector('#winner h3').innerHTML = `${porcentagem}%`
         document.querySelector('#p1').innerHTML = `Você Acertou ${correctAnswers} Perguntas!`
         document.querySelector('#p2').innerHTML = `Você Errou ${wrongQuestions} Perguntas!`
     }
 }
-
-
-
-
-
-
-
-
-
