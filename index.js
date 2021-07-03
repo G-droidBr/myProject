@@ -277,7 +277,7 @@ function winner() {
 function checkWinner() {
     porcentagem = correctAnswers * 10
 
-    if (correctAnswers > 6) {
+    if (correctAnswers >= 6) {
         audio.pause();
         audioWin.play
         ();
