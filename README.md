@@ -4,9 +4,9 @@
 
 # Introdução
 
-      Sejam Bem-vindos ao SoccerTest! SoccerTest é um game que vai testar seus conhecimentos sobre o futebol brasileiro, Além disso moramos em um pais considerado como "Pais Do Futebol", Onde grande parte da população tem seu time escolhido.
+Sejam Bem-vindos ao SoccerTest! SoccerTest é um game que vai testar seus conhecimentos sobre o futebol brasileiro, Além disso moramos em um pais considerado como "Pais Do Futebol", Onde grande parte da população tem seu time escolhido.
 
-      Então como grande parte da pupulação brasileira gosta de futebol nada melhor que um jogo que testa seus conhecimentos!
+Então como grande parte da pupulação brasileira gosta de futebol nada melhor que um jogo que testa seus conhecimentos!
 
 # Como Jogar!
  
